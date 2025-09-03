@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS CLF-C02 Quiz</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1 class="quiz-title">AWS CLF-C02 Quiz</h1>
+            <p class="quiz-subtitle">Test your AWS Cloud Practitioner knowledge</p>
+        </div>
+
+        <div class="progress-section" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="progress-text">Pregunta 1 de 10</span>
+                <span id="score-text">Puntuación: 0</span>
+            </div>
+        </div>
+
+        <div class="config-section" id="config-section">
+            <h2>Configurar Quiz</h2>
+            <div class="form-group">
+                <label for="numQuestions">Número de preguntas:</label>
+                <select id="numQuestions">
+                    <option value="5">5 preguntas</option>
+                    <option value="10" selected>10 preguntas</option>
+                    <option value="20">20 preguntas</option>
+                    <option value="30">30 preguntas</option>
+                    <option value="50">50 preguntas</option>
+                    <option value="all">Todas las preguntas</option>
+                </select>
+            </div>
+            <div class="controls">
+                <button class="btn btn-primary" id="start-btn">
+                    <span>Comenzar Quiz</span>
+                    <span>🚀</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="question-section" id="question-section">
+            <div class="question-card">
+                <div class="question-header">
+                    <span class="question-badge" id="question-badge">Pregunta 1</span>
+                    <span class="question-type" id="question-type">Opción única</span>
+                </div>
+                <div class="question-text" id="question-text">
+                    Cargando pregunta...
+                </div>
+                <div class="instruction-text" id="instruction-text" style="display: none;">
+                    ⚠️ Selecciona todas las respuestas correctas
+                </div>
+                <div class="choices-container" id="choices-container">
+                    <!-- Las opciones se cargarán dinámicamente -->
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-primary" id="submit-btn">
+                    <span>Verificar Respuesta</span>
+                    <span>✓</span>
+                </button>
+                <button class="btn btn-secondary" id="next-btn" style="display: none;">
+                    <span>Siguiente</span>
+                    <span>→</span>
+                </button>
+            </div>
+
+            <div class="feedback" id="feedback" style="display: none;">
+                <!-- Feedback aparecerá aquí -->
+            </div>
+        </div>
+
+        <div class="results-section" id="results-section" style="display: none;">
+            <h2>¡Quiz Completado!</h2>
+            <div class="results-score">
+                <div class="score-circle">
+                    <div class="score-number" id="final-score">0</div>
+                    <div class="score-total" id="final-total">de 10</div>
+                </div>
+                <div class="score-percentage" id="final-percentage">0%</div>
+                <p class="score-message" id="score-message">¡Excelente trabajo!</p>
+            </div>
+            <div class="controls">
+                <button class="btn btn-primary restart-btn" id="restart-btn">
+                    <span>Reiniciar Quiz</span>
+                    <span>🔄</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Alert Modal -->
+    <div class="custom-alert" id="custom-alert" style="display: none;">
+        <div class="alert-content">
+            <button class="alert-close" id="alert-close">&times;</button>
+            <div class="alert-icon">⚠️</div>
+            <div class="alert-message" id="alert-message">
+                Mensaje de alerta
+            </div>
+            <button class="btn btn-primary" id="alert-ok">Entendido</button>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
