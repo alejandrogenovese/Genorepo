@@ -127,6 +127,7 @@ def send_static(path):
 
 if __name__ == '__main__':
     # Asegurarse de que el archivo questions.json existe
+    portnbr = int(os.environ.get('PORT', 5000))
     if not os.path.exists(QUESTIONS_FILE):
         print(f"⚠️ No se encontró {QUESTIONS_FILE}")
         QUESTIONS = []
@@ -146,5 +147,5 @@ if __name__ == '__main__':
     except:
         pass
     
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    app.run(host='0.0.0.0', port=portnbr, debug=False)
 
